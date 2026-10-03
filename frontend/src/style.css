@@ -175,3 +175,32 @@ th { color: var(--vf-dim); font-weight: 600; font-size: 0.75rem; }
 
 .lane { display: flex; height: 28px; background: #0a0c10; border-radius: 4px; overflow: hidden; border: 1px solid #3a4656; margin: 0.35rem 0; }
 .lane-fill { height: 100%; }
+
+/* 分批核销：小票行勾选 / 状态徽标 / 提示条 */
+.vf-receipt.wide { max-width: 560px; }
+.vf-receipt-line.vf-checkable { cursor: pointer; }
+.vf-receipt-line.vf-checkable:hover { background: #efe6c8; }
+.vf-tag-pending { font-weight: 800; color: #b06f00; }
+.vf-tag-verified { font-weight: 800; color: #146c2e; }
+.vf-tag-voided { font-weight: 800; color: #9a2f3a; text-decoration: line-through; }
+.vf-tag-none { color: #6a5e48; }
+
+.vf-badge {
+  display: inline-block; padding: 0.15rem 0.55rem; border-radius: 3px;
+  font-size: 0.72rem; font-weight: 800;
+}
+.vf-badge.vf-draft { background: rgba(255,193,74,0.18); color: var(--vf-amber); }
+.vf-badge.vf-done { background: rgba(57,255,136,0.18); color: var(--vf-led); }
+.vf-badge.vf-void { background: rgba(255,92,108,0.18); color: var(--vf-red); }
+
+.vf-btn-void { background: var(--vf-red); color: #1a0508; }
+.vf-flash {
+  margin: 0.5rem 0; padding: 0.55rem 0.8rem; border-radius: 4px;
+  background: rgba(57,255,136,0.12); border: 1px solid rgba(57,255,136,0.4);
+  color: var(--vf-led); font-size: 0.8rem;
+}
+.vf-error {
+  margin: 0.5rem 0; padding: 0.55rem 0.8rem; border-radius: 4px;
+  background: rgba(255,92,108,0.12); border: 1px solid rgba(255,92,108,0.45);
+  color: var(--vf-red); font-size: 0.8rem;
+}

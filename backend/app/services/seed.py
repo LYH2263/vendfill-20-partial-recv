@@ -3,6 +3,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 from app.models.models import Lane, Location, Sale
 
+
 def seed_if_empty(db: Session) -> None:
     if (db.scalar(select(func.count()).select_from(Location)) or 0) > 0:
         return
@@ -18,7 +19,8 @@ def seed_if_empty(db: Session) -> None:
     ]
     lane_ids = []
     for slot, sku, cap, stock, transit in lanes:
-        lane = Lane(location_id=loc.id, slot_no=slot, sku_name=sku, capacity=cap, stock=stock, in_transit=transit)
+        lane = Lane(location_id=loc.id, slot_no=slot, sku_name=sku, capacity=cap,
+                    stock=stock, in_transit=transit)
         db.add(lane); db.flush()
         lane_ids.append(lane.id)
     now = datetime(2026, 9, 16, 12, 0, 0)
